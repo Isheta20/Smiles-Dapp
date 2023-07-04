@@ -30,7 +30,6 @@ function App() {
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts"
     });
-    // console.log(accounts);//displays the accounts that are connected, after connecting you can switch between accounts
     setAddress(accounts[0]);
   }
 
@@ -40,7 +39,6 @@ function App() {
     const add = await sendContractTx.recieveSmile();
     await add.wait();
     getTotalSmiles();//to set the new value of smile
-    // console.log("Inside addsmile",smile);
   }
   
   const subSmile = async() => {
@@ -48,18 +46,13 @@ function App() {
     const sub = await sendContractTx.sendSmile();
     await sub.wait();
     getTotalSmiles();
-    // totalSmiles-=1;
   }
 
   const getTotalSmiles = async() => {
     console.log("total");
-    // const data = await (getContractData.getTotalSmiles()).toNumber();
     const data = await getContractData.getTotalSmiles();
     const count = parseInt(data._hex);
-    // console.log("data",count);
     setSmile(count);
-    // console.log("after setting smile",smile);
-
   }
   
   return (
@@ -75,4 +68,3 @@ function App() {
 }
 
 export default App;
-// 0x5FbDB2315678afecb367f032d93F642f64180aa3
