@@ -1,0 +1,18 @@
+.Container {
+  background-color: cornflowerblue;
+  text-align: center;
+}
+
+button{
+  color:palegreen;
+  background-color:darkslateblue;
+  border-radius: 6%;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+p{
+  font-weight: 500;
+  margin:15px;
+}
